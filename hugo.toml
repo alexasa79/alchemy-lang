@@ -1,0 +1,4 @@
+baseURL = 'https://alchemy-lang.org'
+languageCode = 'en-us'
+title = 'Alchemy-Lang Programming Language'
+theme = "hugo-PaperMod"
