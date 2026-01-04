@@ -1,7 +1,7 @@
-#baseURL = 'https://alchemy-lang.org'
-baseURL = 'https://alexasa79.codeberg.page/alchemy-lang.org/'
+baseURL = 'https://alchemy-lang.org/'
+#baseURL = 'https://alexasa79.codeberg.page/alchemy-lang.org/'
 languageCode = 'en-us'
 title = 'Alchemy-Lang Programming Language'
 theme = "hugo-PaperMod"
 relativeURLs = true
-canonifyURLs = true
+canonifyURLs = false
