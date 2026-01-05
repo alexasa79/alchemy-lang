@@ -1,7 +1,18 @@
 baseURL = 'https://alchemy-lang.org/'
-#baseURL = 'https://alexasa79.codeberg.page/alchemy-lang.org/'
 languageCode = 'en-us'
 title = 'Alchemy-Lang Programming Language'
 theme = "hugo-PaperMod"
 relativeURLs = true
 canonifyURLs = false
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "author"
+name = "Author"
+url = "/author/"
+weight = 20
