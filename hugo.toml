@@ -1,9 +1,14 @@
 baseURL = 'https://alchemy-lang.org/'
 languageCode = 'en-us'
-title = 'Alchemy Programming Language'
+title = 'Alchemy-Lang Programming Language'
 theme = "hugo-PaperMod"
 relativeURLs = true
 canonifyURLs = false
+draft = true
+
+[params]
+ShowShareButtons = true
+hideFooter = true
 
 [[menu.main]]
 identifier = "home"
@@ -12,7 +17,13 @@ url = "/"
 weight = 10
 
 [[menu.main]]
+identifier = "contents"
+name = "Contents"
+url = "/contents/"
+weight = 20
+
+[[menu.main]]
 identifier = "author"
 name = "Author"
 url = "/author/"
-weight = 20
+weight = 30
