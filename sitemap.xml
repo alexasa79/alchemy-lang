@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://alchemy-lang.org/</loc>
-    <lastmod>2026-01-03T18:05:00-05:00</lastmod>
+    <loc>https://alchemy-lang.org/author/</loc>
+    <lastmod>2026-01-04T21:37:44-05:00</lastmod>
+  </url><url>
+    <loc>https://alchemy-lang.org/c-killers-are-stupid/</loc>
+    <lastmod>2026-01-04T21:02:34-05:00</lastmod>
+  </url><url>
+    <loc>https://alchemy-lang.org/requirements/</loc>
   </url><url>
     <loc>https://alchemy-lang.org/categories/</loc>
   </url><url>
