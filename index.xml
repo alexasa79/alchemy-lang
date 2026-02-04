@@ -18,7 +18,7 @@ introduced a data type called &lt;code&gt;linked_list_of_int&lt;/code&gt;. It&am
 references itself. It implements a doubly linked, circular list. When the list
 is empty, its next and prev pointers will point at the node itself. Thus
 self-referencing.&lt;/p&gt;
-&lt;p&gt;One straight forward way of initializing an instance of this structure is this:&lt;/p&gt;
+&lt;p&gt;One straightforward way of initializing an instance of this structure is this:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;l linked_list_of_int
 l.init()
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What if we wanted to use something like a designated initializer? Something like:&lt;/p&gt;</description>
@@ -29,7 +29,7 @@ l.init()
       <pubDate>Wed, 07 Jan 2026 11:48:31 -0500</pubDate>
       <guid>https://alchemy-lang.org/cve-2025-14847/</guid>
       <description>&lt;p&gt;This is a discussion of how a programming language could prevent CVE-2025-14847
-security vulnerability in MongoDB. The bug caused MongoDB spill its memory to
+security vulnerability in MongoDB. The bug caused MongoDB to spill its memory to
 the client in response to a request. The actual bug was due to returning wrong
 length of the output.&lt;/p&gt;
 &lt;p&gt;MongoDB uses BSON (Binary JSON) to return the response. BSON is compressed.
@@ -50,12 +50,12 @@ and another 400 bytes, whatever is in the memory after the compressed buffer.&lt
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;fn main {
     std.print(&amp;#34;hello world\n&amp;#34;)
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Already you can see a couple of intesting things. First of all, a function
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Already you can see a couple of interesting things. First of all, a function
 starts with &lt;code&gt;fn&lt;/code&gt; keyword. If a function does not accept parameters, you don&amp;rsquo;t
 have to type parenthesis. Same with the return type. This function returns
 nothing.&lt;/p&gt;
 &lt;p&gt;The string &amp;ldquo;hello world\n&amp;rdquo;, is printed using &lt;code&gt;std.print&lt;/code&gt;. &lt;code&gt;std&lt;/code&gt; is the name of
-the standard namespace. &lt;code&gt;print&lt;/code&gt; is the name of the function. The standard libary
+the standard namespace. &lt;code&gt;print&lt;/code&gt; is the name of the function. The standard library
 has internal hierarchy, but some of the most common functions available right
 there at the top of the library.&lt;/p&gt;</description>
     </item>
@@ -74,7 +74,7 @@ project.&lt;/p&gt;
       <link>https://alchemy-lang.org/author/</link>
       <pubDate>Sun, 04 Jan 2026 21:37:44 -0500</pubDate>
       <guid>https://alchemy-lang.org/author/</guid>
-      <description>&lt;p&gt;My name is Alexander Sandler. Friends and colleauges call me Sasha. At the time
+      <description>&lt;p&gt;My name is Alexander Sandler. Friends and colleagues call me Sasha. At the time
 of writing this, I am a Software Development Architect at Oracle. I am
 responsible for &lt;a href=&#34;https://www.oracle.com/cloud/storage/file-storage/&#34;&gt;OCI&amp;rsquo;s File System
 Services&lt;/a&gt;. You can find more
@@ -88,8 +88,8 @@ information about me on my &lt;a href=&#34;https://www.linkedin.com/in/alexander
       <link>https://alchemy-lang.org/c-killers-are-stupid/</link>
       <pubDate>Sun, 04 Jan 2026 21:02:34 -0500</pubDate>
       <guid>https://alchemy-lang.org/c-killers-are-stupid/</guid>
-      <description>&lt;p&gt;This is just to say that any new programming language trying to replace C are
-doomed before they even start. The primary reason for that is the fact that C is
+      <description>&lt;p&gt;This is just to say that any new programming language trying to replace C is
+doomed before it even starts. The primary reason for that is the fact that C is
 (at the time of writing this) a 52 years old language. People that choose C for
 their project, are looking for one of two things:&lt;/p&gt;
 &lt;ol&gt;
