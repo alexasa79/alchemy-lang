@@ -10,7 +10,7 @@ references itself. It implements a doubly linked, circular list. When the list
 is empty, its next and prev pointers will point at the node itself. Thus
 self-referencing.
 
-One straight forward way of initializing an instance of this structure is this:
+One straightforward way of initializing an instance of this structure is this:
 ```
 l linked_list_of_int
 l.init()

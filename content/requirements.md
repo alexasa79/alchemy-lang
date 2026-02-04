@@ -1,4 +1,5 @@
-e = '2026-01-03T18:05:00-05:00'
++++
+date = '2026-01-03T18:05:00-05:00'
 draft = true
 title = 'Alchemy Requirements'
 +++
@@ -20,7 +21,7 @@ an alternative to C means that we do not compromise on features and we do not
 compromise on performance. We want to support variety of platforms.
 
 One potential niche that Alchemy could start with is being a language of
-programming languages. I.e., a language where its easy to implement a parser for
+programming languages. I.e., a language where it's easy to implement a parser for
 another programming language. Similarly, it should be easy to implement RPC
 infrastructure. Alchemy's macro support should make it easy (more on this
 later).
@@ -45,8 +46,8 @@ less characters. `func` is better than `function` and `fn` is better than
 Knowing when to stop is another kind of brevity. C is known to release 0.75
 features per year. C++ releases around 6 features per year and Rust releases 12.
 (I heard this somewhere, but could not find an independent source to confirm
-this, so take these numbers with a grain of salt; the numbers are nevertheless,
-seems to be in the ballpark). According to [Signer et. al](#singer), Java's
+this, so take these numbers with a grain of salt; the numbers nevertheless
+seem to be in the ballpark). According to [Signer et. al](#singer), Java's
 specification has grown by annualized rate of 55.6 pages per year between 1996
 and 2006.
 
@@ -69,7 +70,7 @@ This makes Alchemy an interesting beast. Macro languages are interpreted
 languages. Compiled languages are, well, compiled. I would like Alchemy to be
 both compiled and interpreted. A macro written in Alchemy will run in the
 context of the compiler. This creates a few interesting problems with security,
-but aside from that this opens an entire univese of interesting features.
+but aside from that this opens an entire universe of interesting features.
 
 One such feature is allowing the macro full access to the program's AST. A macro
 in Alchemy, is a function that can:
@@ -85,7 +86,7 @@ strong reasons why a new language is necessary.*
 
 ## Correctness checker.
 
-A straight forward approach to the correctness checker is for the compiler to be
+A straightforward approach to the correctness checker is for the compiler to be
 able to catch common problems. Given the requirement to have a somewhat low
 level language, we want to support a notion of pointers and null pointer, but we
 want the compiler to tell us when we're introducing bugs. We want to support
@@ -113,7 +114,7 @@ in a context of heterogeneous teams, that mix junior and experienced engineers.
 A different approach is to use some form of programming by contracts paradigm.
 The idea here is that the engineer will specify the contract that the function
 adheres to and the compiler will verify that the code implements the contract.
-Having an SMT solves propped to hunt for bugs is a strong requirement.
+Having an SMT solver primed to hunt for bugs is a strong requirement.
 
 Most programming languages that support programming-by-contract paradigm offer
 this feature via large extension to the programming language. Not only the
@@ -134,7 +135,7 @@ editors would be nice.
 
 ## AI.
 
-AI is everywhere. Alchemy must be a friendly to AI. One interesting aspect is
+AI is everywhere. Alchemy must be friendly to AI. One interesting aspect is
 how to vibe code using Alchemy. This is where minimalism comes in handy. Imagine
 having a short Alchemy manual for AI. Add this manual to the AI context and you
 could vibe code in Alchemy without waiting for AIs to learn about Alchemy.
