@@ -8,3 +8,5 @@ The structure of the web-site is as follows:
 
 [Requirements](/requirements/) document describes the requirements for the
 project.
+
+[A tasting](/tasting/) A series of examples of coding things in Alchemy.
