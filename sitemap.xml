@@ -2,11 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://alchemy-lang.org/copy-elision/</loc>
+    <lastmod>2026-01-11T12:04:39-05:00</lastmod>
+  </url><url>
+    <loc>https://alchemy-lang.org/cve-2025-14847/</loc>
+    <lastmod>2026-01-07T11:48:31-05:00</lastmod>
+  </url><url>
+    <loc>https://alchemy-lang.org/tasting/</loc>
+    <lastmod>2026-01-06T20:44:41-05:00</lastmod>
+  </url><url>
+    <loc>https://alchemy-lang.org/contents/</loc>
+    <lastmod>2026-01-04T23:20:31-05:00</lastmod>
+  </url><url>
     <loc>https://alchemy-lang.org/author/</loc>
     <lastmod>2026-01-04T21:37:44-05:00</lastmod>
   </url><url>
     <loc>https://alchemy-lang.org/c-killers-are-stupid/</loc>
     <lastmod>2026-01-04T21:02:34-05:00</lastmod>
+  </url><url>
+    <loc>https://alchemy-lang.org/requirements/</loc>
+    <lastmod>2026-01-03T18:05:00-05:00</lastmod>
+  </url><url>
+    <loc>https://alchemy-lang.org/</loc>
+    <lastmod>2026-01-03T18:05:00-05:00</lastmod>
   </url><url>
     <loc>https://alchemy-lang.org/categories/</loc>
   </url><url>
