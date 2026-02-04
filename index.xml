@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Welcome to Alchemy Programming Language on Alchemy-Lang Programming Language</title>
+    <link>https://alchemy-lang.org/</link>
+    <description>Recent content in Welcome to Alchemy Programming Language on Alchemy-Lang Programming Language</description>
+    <generator>Hugo -- 0.154.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jan 2026 12:04:39 -0500</lastBuildDate>
+    <atom:link href="https://alchemy-lang.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Copy Elision</title>
+      <link>https://alchemy-lang.org/copy-elision/</link>
+      <pubDate>Sun, 11 Jan 2026 12:04:39 -0500</pubDate>
+      <guid>https://alchemy-lang.org/copy-elision/</guid>
+      <description>&lt;p&gt;As I am designing the language, I ran into an interesting problem. Let&amp;rsquo;s say we
+introduced a data type called &lt;code&gt;linked_list_of_int&lt;/code&gt;. It&amp;rsquo;s a structure that
+references itself. It implements a doubly linked, circular list. When the list
+is empty, its next and prev pointers will point at the node itself. Thus
+self-referencing.&lt;/p&gt;
+&lt;p&gt;One straight forward way of initializing an instance of this structure is this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;l linked_list_of_int
+l.init()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What if we wanted to use something like a designated initializer? Something like:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cve 2025 14847</title>
+      <link>https://alchemy-lang.org/cve-2025-14847/</link>
+      <pubDate>Wed, 07 Jan 2026 11:48:31 -0500</pubDate>
+      <guid>https://alchemy-lang.org/cve-2025-14847/</guid>
+      <description>&lt;p&gt;This is a discussion of how a programming language could prevent CVE-2025-14847
+security vulnerability in MongoDB. The bug caused MongoDB spill its memory to
+the client in response to a request. The actual bug was due to returning wrong
+length of the output.&lt;/p&gt;
+&lt;p&gt;MongoDB uses BSON (Binary JSON) to return the response. BSON is compressed.
+Preparing the output starts with preparing the response JSON, which is then
+turned into Binary JSON, which is then compressed. Somewhere along the way, the
+code decides how many bytes to return and instead of returning the length of the
+compressed buffer, it decided to return the number of bytes before the
+compression. So if the compressed response is 100 bytes and uncompressed
+response is 500 bytes, then it would return the compressed response of 100 bytes
+and another 400 bytes, whatever is in the memory after the compressed buffer.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tasting</title>
+      <link>https://alchemy-lang.org/tasting/</link>
+      <pubDate>Tue, 06 Jan 2026 20:44:41 -0500</pubDate>
+      <guid>https://alchemy-lang.org/tasting/</guid>
+      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello world&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;fn main {
+    std.print(&amp;#34;hello world\n&amp;#34;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Already you can see a couple of intesting things. First of all, a function
+starts with &lt;code&gt;fn&lt;/code&gt; keyword. If a function does not accept parameters, you don&amp;rsquo;t
+have to type parenthesis. Same with the return type. This function returns
+nothing.&lt;/p&gt;
+&lt;p&gt;The string &amp;ldquo;hello world\n&amp;rdquo;, is printed using &lt;code&gt;std.print&lt;/code&gt;. &lt;code&gt;std&lt;/code&gt; is the name of
+the standard namespace. &lt;code&gt;print&lt;/code&gt; is the name of the function. The standard libary
+has internal hierarchy, but some of the most common functions available right
+there at the top of the library.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contents</title>
+      <link>https://alchemy-lang.org/contents/</link>
+      <pubDate>Sun, 04 Jan 2026 23:20:31 -0500</pubDate>
+      <guid>https://alchemy-lang.org/contents/</guid>
+      <description>&lt;p&gt;The structure of the web-site is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./requirements/&#34;&gt;Requirements&lt;/a&gt; document describes the requirements for the
+project.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./tasting/&#34;&gt;A tasting&lt;/a&gt; A series of examples of coding things in Alchemy.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Author</title>
+      <link>https://alchemy-lang.org/author/</link>
+      <pubDate>Sun, 04 Jan 2026 21:37:44 -0500</pubDate>
+      <guid>https://alchemy-lang.org/author/</guid>
+      <description>&lt;p&gt;My name is Alexander Sandler. Friends and colleauges call me Sasha. At the time
+of writing this, I am a Software Development Architect at Oracle. I am
+responsible for &lt;a href=&#34;https://www.oracle.com/cloud/storage/file-storage/&#34;&gt;OCI&amp;rsquo;s File System
+Services&lt;/a&gt;. You can find more
+information about me on my &lt;a href=&#34;https://www.linkedin.com/in/alexandersandler/&#34;&gt;LinkedIn
+&lt;/a&gt; profile.&lt;/p&gt;
+&lt;p&gt;If you have any questions, feel free to send me an email at
+&lt;a href=&#34;mailto:alexander.sandler@gmail.com&#34;&gt;alexander.sandler@gmail.com&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>C Killers Are Stupid</title>
+      <link>https://alchemy-lang.org/c-killers-are-stupid/</link>
+      <pubDate>Sun, 04 Jan 2026 21:02:34 -0500</pubDate>
+      <guid>https://alchemy-lang.org/c-killers-are-stupid/</guid>
+      <description>&lt;p&gt;This is just to say that any new programming language trying to replace C are
+doomed before they even start. The primary reason for that is the fact that C is
+(at the time of writing this) a 52 years old language. People that choose C for
+their project, are looking for one of two things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;They are either looking for a niche language for an environment where
+nothing else is available. IOT devices, various embedded systems, kernels are
+such environments.&lt;/li&gt;
+&lt;li&gt;Or they are looking for uncompromised performance stability and maturity.
+With a special emphasis on maturity.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;New programming languages are not a good match for IoT and embedded systems
+because of a large variety of hardware platforms that would have to be
+supported. A small programming language project that just started would not have
+the resource to cast their support net so wide. In some cases, the hardware
+vendor can only afford supporting one programming language. The hardware
+vendors, after all, are thinking about hardware and for them software is usually
+an afterthought.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://alchemy-lang.org/requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://alchemy-lang.org/requirements/</guid>
+      <description>&lt;p&gt;e = &amp;lsquo;2026-01-03T18:05:00-05:00&amp;rsquo;
+draft = true
+title = &amp;lsquo;Alchemy Requirements&amp;rsquo;
++++&lt;/p&gt;
+&lt;h1 id=&#34;what-kind-of-language&#34;&gt;What kind of language?&lt;/h1&gt;
+&lt;p&gt;Generally speaking the goal is to have a language that could be used for any
+purpose. At first we can probably skip embedded programming, although
+contemporary devices like Raspberry Pi should be able to run programs compiled
+with Alchemy.&lt;/p&gt;
+&lt;p&gt;There are several important requirements for the language:&lt;/p&gt;
+&lt;h2 id=&#34;the-basics&#34;&gt;The basics&lt;/h2&gt;
+&lt;p&gt;I am looking for a language that could replace C or C++ for typical use cases. I
+do want to call out that &lt;a href=&#34;./c-killers-are-stupid/&#34;&gt;C killers are stupid&lt;/a&gt;. Being
+an alternative to C means that we do not compromise on features and we do not
+compromise on performance. We want to support variety of platforms.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
