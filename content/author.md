@@ -4,7 +4,7 @@ draft = false
 title = 'Author'
 +++
 
-My name is Alexander Sandler. Friends and colleauges call me Sasha. At the time
+My name is Alexander Sandler. Friends and colleagues call me Sasha. At the time
 of writing this, I am a Software Development Architect at Oracle. I am
 responsible for [OCI's File System
 Services](https://www.oracle.com/cloud/storage/file-storage/). You can find more

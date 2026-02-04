@@ -12,13 +12,13 @@ fn main {
 }
 ```
 
-Already you can see a couple of intesting things. First of all, a function
+Already you can see a couple of interesting things. First of all, a function
 starts with `fn` keyword. If a function does not accept parameters, you don't
 have to type parenthesis. Same with the return type. This function returns
 nothing.
 
 The string "hello world\n", is printed using `std.print`. `std` is the name of
-the standard namespace. `print` is the name of the function. The standard libary
+the standard namespace. `print` is the name of the function. The standard library
 has internal hierarchy, but some of the most common functions available right
 there at the top of the library.
 
@@ -27,7 +27,7 @@ No semicolons.
 ## Variables
 
 There are a couple of ways to declare a variable:
-1. We can declare an untinialized variable by specifying its name and its type.
+1. We can declare an uninitialized variable by specifying its name and its type.
 2. We declare a variable of arbitrary type by assigning it a value of that type.
 
 Here are few examples:
@@ -185,7 +185,7 @@ v.push(10)
 v.push(20)
 ```
 
-`std.atd` namespace contains different data structures. In this case we need
+`std.adt` namespace contains different data structures. In this case we need
 `vector`. This is the first time we see a macro. `std.adt.vector` is a macro
 function. It generates the code for a vector of integers, creates an object of
 that type and returns it.
@@ -195,7 +195,7 @@ Vector can also accept some options and we can initialize its value:
 v := std.adt.vector(int, {capacity=16}, {10, 20, 30})
 ```
 
-Here's we initialized it with options. In this case, there is only one option -
+Here we initialized it with options. In this case, there is only one option -
 capacity. And we initialized it with initial values. We can omit initialization
 values or the options structure (it is a structure).
 
@@ -317,7 +317,7 @@ compile time.
 
 The true power of macros in Alchemy comes from the ability to manipulate the AST
 nodes of the program. ADT, or Abstract Data Types in Alchemy are implemented
-using macros. Alchmey does not support templates or generics. Instead, macros
+using macros. Alchemy does not support templates or generics. Instead, macros
 fulfil this role.
 
 Macros returns an array of AST nodes. These nodes are then stored in the
@@ -335,7 +335,7 @@ To implement something like `linked_list` we need two things. First we have to
 introduce the `linked_list` structure into some scope. Since the implementation
 depends on the type, the new type we introduce must be named after the type it
 contains. For integers, `linked_list_of_int` seems like a good type name. The
-scope we will introcuce it to is the scope of the `std.ast` package. It is a
+scope we will introduce it to is the scope of the `std.ast` package. It is a
 scope used by different packages and multiple users of linked lists in the
 program will be able to find the `linked_list_of_int` there.
 

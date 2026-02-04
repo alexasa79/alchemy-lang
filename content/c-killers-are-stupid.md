@@ -4,8 +4,8 @@ draft = false
 title = 'C Killers Are Stupid'
 +++
 
-This is just to say that any new programming language trying to replace C are
-doomed before they even start. The primary reason for that is the fact that C is
+This is just to say that any new programming language trying to replace C is
+doomed before it even starts. The primary reason for that is the fact that C is
 (at the time of writing this) a 52 years old language. People that choose C for
 their project, are looking for one of two things:
 
