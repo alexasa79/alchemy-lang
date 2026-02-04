@@ -1,5 +1,4 @@
-+++
-date = '2026-01-03T18:05:00-05:00'
+e = '2026-01-03T18:05:00-05:00'
 draft = true
 title = 'Alchemy Requirements'
 +++
@@ -18,8 +17,7 @@ There are several important requirements for the language:
 I am looking for a language that could replace C or C++ for typical use cases. I
 do want to call out that [C killers are stupid](/c-killers-are-stupid/). Being
 an alternative to C means that we do not compromise on features and we do not
-compromise on performance. We want to support variety of platforms, including
-and especially Web Assembly.
+compromise on performance. We want to support variety of platforms.
 
 One potential niche that Alchemy could start with is being a language of
 programming languages. I.e., a language where its easy to implement a parser for
@@ -161,6 +159,21 @@ statically linked by default. This has two major advantages:
 Statically linked binaries are bigger, but I hope that DCE will be able to
 cancel this out. Unlike in gcc and clang, I want this feature to be enabled by
 default.
+
+## Prefer smart compiler over slow code.
+
+This is perhaps another way of looking at the correctness checker. We want
+compiler to find the bugs for us instead of forcing us to do something in a
+certain way. For example, one potential source of bugs are uninitialized
+variables. Various programming languages approach this problem differently. C
+mostly ignores it, while other languages force you to initialize the variable,
+or sometimes initialize it for you.
+
+The right way to approach this problem is to not force the program to initialize
+all variables. This can affect performance. In many cases it is not strictly
+necessary. With that said, the compiler will know when a variable being used
+without initializing it. It should not force initialization, but it must
+guarantee that the program will not use uninitialized value.
 
 # To be continued...
 
