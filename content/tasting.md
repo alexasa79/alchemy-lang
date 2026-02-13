@@ -307,7 +307,7 @@ will work, and the following:
 
 ```
 fn main {
-    a := 10
+    n := 10
     std.print("{fibonacci(n)}\n")
 }
 ```
@@ -359,7 +359,7 @@ macro linked_list(n std.ct.type) {
         })
     }
 
-    return ast init linked_list_of_##n.name {
+    return code init linked_list_of_##n.name {
         self.head.next = &self.head
         self.head.prev = &self.head
     }
@@ -375,7 +375,7 @@ We check if `linked_list_of_##n.name` already exists in the package scope. The
 `##` operator concatenates identifiers, so for `n = int`, this becomes
 `linked_list_of_int`. If the type doesn't exist, we inject it.
 
-The `ast { }` block creates AST nodes from the code inside. This is how we
+The `code { }` block creates AST nodes from the code inside. This is how we
 generate new code at compile time. We inject two struct definitions:
 - `linked_list_node_of_##n.name`: A node with next/prev pointers and data
 - `linked_list_of_##n.name`: The list itself, containing a sentinel head node
@@ -406,19 +406,3 @@ guarantee, we would create a temporary, set its pointers, then copy it to
 Init blocks are like inline constructors that can see variables from their
 surrounding scope, making them more flexible than traditional class
 constructors.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
