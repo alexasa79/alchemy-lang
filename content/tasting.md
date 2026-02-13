@@ -346,7 +346,7 @@ helpful package that will help us with these and other AST manipulations is
 ```
 macro linked_list(n std.ct.type) {
     if !std.ct.find_in_scope(std.ct.package, "linked_list_of_##n.name") {
-        std.ct.inject(std.ct.package, ast {
+        std.ct.inject(std.ct.package, code {
             linked_list_node_of_##n.name := struct {
                 next linked_list_node_of_##n.name*
                 prev linked_list_node_of_##n.name*
