@@ -380,9 +380,9 @@ generate new code at compile time. We inject two struct definitions:
 - `linked_list_node_of_##n.name`: A node with next/prev pointers and data
 - `linked_list_of_##n.name`: The list itself, containing a sentinel head node
 
-4. Finally, we return an `init` block. Init blocks are special constructs for
-   in-place initialization. The `self` keyword refers to the variable being
-   initialized. When someone writes:
+Finally, we return an `init` block. Init blocks are special constructs for
+in-place initialization. The `self` keyword refers to the variable being
+initialized. When someone writes:
 
 ```
 list := std.adt.linked_list(int)
