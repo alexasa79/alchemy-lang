@@ -7,15 +7,16 @@
 <meta name="robots" content="index, follow">
 <title>Copy Elision | Alchemy-Lang Programming Language</title>
 <meta name="keywords" content="">
-<meta name="description" content="As I am designing the language, I ran into an interesting problem. Let&rsquo;s say we
-introduced a data type called linked_list_of_int. It&rsquo;s a structure that
+<meta name="description" content="As we are designing the language, we ran into an interesting problem. Let&rsquo;s say
+we introduced a data type called linked_list_of_int. It&rsquo;s a structure that
 references itself. It implements a doubly linked, circular list. When the list
 is empty, its next and prev pointers will point at the node itself. Thus
 self-referencing.
 One straightforward way of initializing an instance of this structure is this:
 l linked_list_of_int
 l.init()
-What if we wanted to use something like a designated initializer? Something like:">
+What if we wanted to use something like a designated initializer? Something
+like:">
 <meta name="author" content="">
 <link rel="canonical" href="https://alchemy-lang.org/copy-elision/">
 <link crossorigin="anonymous" href="../assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
@@ -81,7 +82,7 @@ What if we wanted to use something like a designated initializer? Something like
 </script><meta property="og:url" content="https://alchemy-lang.org/copy-elision/">
   <meta property="og:site_name" content="Alchemy-Lang Programming Language">
   <meta property="og:title" content="Copy Elision">
-  <meta property="og:description" content="As I am designing the language, I ran into an interesting problem. Let’s say we introduced a data type called linked_list_of_int. It’s a structure that references itself. It implements a doubly linked, circular list. When the list is empty, its next and prev pointers will point at the node itself. Thus self-referencing.
+  <meta property="og:description" content="As we are designing the language, we ran into an interesting problem. Let’s say we introduced a data type called linked_list_of_int. It’s a structure that references itself. It implements a doubly linked, circular list. When the list is empty, its next and prev pointers will point at the node itself. Thus self-referencing.
 One straightforward way of initializing an instance of this structure is this:
 l linked_list_of_int l.init() What if we wanted to use something like a designated initializer? Something like:">
   <meta property="og:locale" content="en-us">
@@ -90,15 +91,16 @@ l linked_list_of_int l.init() What if we wanted to use something like a designat
     <meta property="article:modified_time" content="2026-01-11T12:04:39-05:00">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Copy Elision">
-<meta name="twitter:description" content="As I am designing the language, I ran into an interesting problem. Let&rsquo;s say we
-introduced a data type called linked_list_of_int. It&rsquo;s a structure that
+<meta name="twitter:description" content="As we are designing the language, we ran into an interesting problem. Let&rsquo;s say
+we introduced a data type called linked_list_of_int. It&rsquo;s a structure that
 references itself. It implements a doubly linked, circular list. When the list
 is empty, its next and prev pointers will point at the node itself. Thus
 self-referencing.
 One straightforward way of initializing an instance of this structure is this:
 l linked_list_of_int
 l.init()
-What if we wanted to use something like a designated initializer? Something like:">
+What if we wanted to use something like a designated initializer? Something
+like:">
 
 
 <script type="application/ld+json">
@@ -121,12 +123,12 @@ What if we wanted to use something like a designated initializer? Something like
   "@type": "BlogPosting",
   "headline": "Copy Elision",
   "name": "Copy Elision",
-  "description": "As I am designing the language, I ran into an interesting problem. Let\u0026rsquo;s say we introduced a data type called linked_list_of_int. It\u0026rsquo;s a structure that references itself. It implements a doubly linked, circular list. When the list is empty, its next and prev pointers will point at the node itself. Thus self-referencing.\nOne straightforward way of initializing an instance of this structure is this:\nl linked_list_of_int l.init() What if we wanted to use something like a designated initializer? Something like:\n",
+  "description": "As we are designing the language, we ran into an interesting problem. Let\u0026rsquo;s say we introduced a data type called linked_list_of_int. It\u0026rsquo;s a structure that references itself. It implements a doubly linked, circular list. When the list is empty, its next and prev pointers will point at the node itself. Thus self-referencing.\nOne straightforward way of initializing an instance of this structure is this:\nl linked_list_of_int l.init() What if we wanted to use something like a designated initializer? Something like:\n",
   "keywords": [
     
   ],
-  "articleBody": "As I am designing the language, I ran into an interesting problem. Let’s say we introduced a data type called linked_list_of_int. It’s a structure that references itself. It implements a doubly linked, circular list. When the list is empty, its next and prev pointers will point at the node itself. Thus self-referencing.\nOne straightforward way of initializing an instance of this structure is this:\nl linked_list_of_int l.init() What if we wanted to use something like a designated initializer? Something like:\nl := linked_list_of_int{node={next=\u0026l, prev=\u0026l}} When we write the code like this, l is declared first and then we assign its value. While l itself does not have valid values, it has an address. We can then refer to that address when we initialize next and prev.\n",
-  "wordCount" : "126",
+  "articleBody": "As we are designing the language, we ran into an interesting problem. Let’s say we introduced a data type called linked_list_of_int. It’s a structure that references itself. It implements a doubly linked, circular list. When the list is empty, its next and prev pointers will point at the node itself. Thus self-referencing.\nOne straightforward way of initializing an instance of this structure is this:\nl linked_list_of_int l.init() What if we wanted to use something like a designated initializer? Something like:\nl := linked_list_of_int{node={next=\u0026l, prev=\u0026l}} When we write the code like this, l is declared first and then we assign its value. While l itself does not have valid values, it has an address. We can then refer to that address when we initialize next and prev.\nThis looks promising, but the problem is that on the right side of the assignment operator we can have a macro. The macro will return a code block that initializes the variable. The problem is that the macro is generic. When we write the macro, we will not know the name of the variable that will store the structure that we initialize. Therefore, having something like self, a generic name that we can use to refer to the destination of the initialization block, is preferable.\nThe next interesting question to contend with is whether blocks of code that use self should be special block constructs. Do we need something like:\nl := init{node={next=\u0026self, prev=\u0026self}} or can we get along without the init keyword? Arguably, if we can get along without init, then we should do that. Hence the above example will look like this:\nl := {node={next=\u0026self, prev=\u0026self}} This should be somewhat straightforward to implement. The self keyword must appear in the code block to the right of initialization.\nThe overall problem we are trying to solve here is implementing an optimization called copy elision. With this optimization we are looking for a way to avoid creating a temporary object and then copying it into the memory region allocated for the variable.\n",
+  "wordCount" : "338",
   "inLanguage": "en",
   "datePublished": "2026-01-11T12:04:39-05:00",
   "dateModified": "2026-01-11T12:04:39-05:00",
@@ -210,19 +212,40 @@ What if we wanted to use something like a designated initializer? Something like
 
 </div>
   </header> 
-  <div class="post-content"><p>As I am designing the language, I ran into an interesting problem. Let&rsquo;s say we
-introduced a data type called <code>linked_list_of_int</code>. It&rsquo;s a structure that
+  <div class="post-content"><p>As we are designing the language, we ran into an interesting problem. Let&rsquo;s say
+we introduced a data type called <code>linked_list_of_int</code>. It&rsquo;s a structure that
 references itself. It implements a doubly linked, circular list. When the list
 is empty, its next and prev pointers will point at the node itself. Thus
 self-referencing.</p>
 <p>One straightforward way of initializing an instance of this structure is this:</p>
 <pre tabindex="0"><code>l linked_list_of_int
 l.init()
-</code></pre><p>What if we wanted to use something like a designated initializer? Something like:</p>
+</code></pre><p>What if we wanted to use something like a designated initializer? Something
+like:</p>
 <pre tabindex="0"><code>l := linked_list_of_int{node={next=&amp;l, prev=&amp;l}}
 </code></pre><p>When we write the code like this, <code>l</code> is declared first and then we assign its
 value. While <code>l</code> itself does not have valid values, it has an address. We can
 then refer to that address when we initialize <code>next</code> and <code>prev</code>.</p>
+<p>This looks promising, but the problem is that on the right side of the
+assignment operator we can have a macro. The macro will return a code block that
+initializes the variable. The problem is that the macro is generic. When we
+write the macro, we will not know the name of the variable that will store the
+structure that we initialize. Therefore, having something like <code>self</code>, a generic
+name that we can use to refer to the destination of the initialization block, is
+preferable.</p>
+<p>The next interesting question to contend with is whether blocks of code that use
+<code>self</code> should be special block constructs. Do we need something like:</p>
+<pre tabindex="0"><code>l := init{node={next=&amp;self, prev=&amp;self}}
+</code></pre><p>or can we get along without the <code>init</code> keyword? Arguably, if we can get along
+without <code>init</code>, then we should do that. Hence the above example will look like
+this:</p>
+<pre tabindex="0"><code>l := {node={next=&amp;self, prev=&amp;self}}
+</code></pre><p>This should be somewhat straightforward to implement. The <code>self</code> keyword must
+appear in the code block to the right of initialization.</p>
+<p>The overall problem we are trying to solve here is implementing an optimization
+called <strong>copy elision</strong>. With this optimization we are looking for a way to
+avoid creating a temporary object and then copying it into the memory region
+allocated for the variable.</p>
 
 
   </div>

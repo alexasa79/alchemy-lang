@@ -13,15 +13,16 @@
       <link>https://alchemy-lang.org/copy-elision/</link>
       <pubDate>Sun, 11 Jan 2026 12:04:39 -0500</pubDate>
       <guid>https://alchemy-lang.org/copy-elision/</guid>
-      <description>&lt;p&gt;As I am designing the language, I ran into an interesting problem. Let&amp;rsquo;s say we
-introduced a data type called &lt;code&gt;linked_list_of_int&lt;/code&gt;. It&amp;rsquo;s a structure that
+      <description>&lt;p&gt;As we are designing the language, we ran into an interesting problem. Let&amp;rsquo;s say
+we introduced a data type called &lt;code&gt;linked_list_of_int&lt;/code&gt;. It&amp;rsquo;s a structure that
 references itself. It implements a doubly linked, circular list. When the list
 is empty, its next and prev pointers will point at the node itself. Thus
 self-referencing.&lt;/p&gt;
 &lt;p&gt;One straightforward way of initializing an instance of this structure is this:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;l linked_list_of_int
 l.init()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What if we wanted to use something like a designated initializer? Something like:&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What if we wanted to use something like a designated initializer? Something
+like:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cve 2025 14847</title>
@@ -67,7 +68,9 @@ there at the top of the library.&lt;/p&gt;</description>
       <description>&lt;p&gt;The structure of the web-site is as follows:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;./requirements/&#34;&gt;Requirements&lt;/a&gt; document describes the requirements for the
 project.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;./tasting/&#34;&gt;A tasting&lt;/a&gt; A series of examples of coding things in Alchemy.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;./tasting/&#34;&gt;A tasting&lt;/a&gt; A series of examples of coding things in Alchemy.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./copy-elision/&#34;&gt;Copy Elision&lt;/a&gt; discusses destination-based initialization and
+how &lt;code&gt;self&lt;/code&gt; can support copy-elision semantics.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Author</title>
