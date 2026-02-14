@@ -10,3 +10,6 @@ The structure of the web-site is as follows:
 project.
 
 [A tasting](/tasting/) A series of examples of coding things in Alchemy.
+
+[Copy Elision](/copy-elision/) discusses destination-based initialization and
+how `self` can support copy-elision semantics.
