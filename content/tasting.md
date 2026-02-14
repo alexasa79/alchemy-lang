@@ -380,9 +380,9 @@ generate new code at compile time. We inject two struct definitions:
 - `linked_list_node_of_##n.name`: A node with next/prev pointers and data
 - `linked_list_of_##n.name`: The list itself, containing a sentinel head node
 
-Finally, we return an `init` block. Init blocks are special constructs for
-in-place initialization. The `self` keyword refers to the variable being
-initialized. When someone writes:
+Finally, we return an initialization block. Initialization blocks are special
+constructs for in-place initialization. Such blocks are allowed to use `self`
+keyword to refer to the variable being initialized. When someone writes:
 
 ```
 list := std.adt.linked_list(int)
@@ -391,7 +391,7 @@ list := std.adt.linked_list(int)
 The macro expands to:
 
 ```
-list := init linked_list_of_int {
+list := linked_list_of_int {
     self.head.next = &self.head
     self.head.prev = &self.head
 }
@@ -403,6 +403,6 @@ where the sentinel node's pointers must reference itself. Without this
 guarantee, we would create a temporary, set its pointers, then copy it to
 `list`, leaving the pointers dangling at the old location.
 
-Init blocks are like inline constructors that can see variables from their
-surrounding scope, making them more flexible than traditional class
+Inititialization blocks are like inline constructors that can see variables from
+their surrounding scope, making them more flexible than traditional class
 constructors.

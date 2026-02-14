@@ -25,4 +25,28 @@ When we write the code like this, `l` is declared first and then we assign its
 value. While `l` itself does not have valid values, it has an address. We can
 then refer to that address when we initialize `next` and `prev`.
 
+This looks promising, but the problem is that on the right side of the
+assignment operator I can have a macro. The macro will return a code block that
+initializes the variable. The problem is that the macro is generic. When we
+write the macro, we will not know the name of the variable that will store the
+structure that we initialize. Therefore, having something like `self`, a generic
+name that we can use to refer to the destination of the initialization block, is
+preferable.
+
+The next interesting question to contend with is should the blocks of code that
+use `self` be special block codes. Do we need something like:
+
+```
+l := init{node={next=&self, prev=&self}}
+```
+
+or we can along without the `init` keyword? Arguably, if we can get along
+without `init`, then we better do that. Hence the above example will look like
+this:
+
+```
+l := {node={next=&self, prev=&self}}
+```
+
+
 
