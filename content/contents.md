@@ -9,7 +9,10 @@ The structure of the web-site is as follows:
 [Requirements](/requirements/) document describes the requirements for the
 project.
 
-[A tasting](/tasting/) A series of examples of coding things in Alchemy.
+[A Tasting](/tasting/) A series of examples of coding things in Alchemy.
+
+[Why New Language?](/why-new-language/) A discussion on the reasons for
+implementing a new language.
 
 [Copy Elision](/copy-elision/) discusses destination-based initialization and
 how `self` can support copy-elision semantics.
