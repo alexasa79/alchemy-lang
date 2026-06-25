@@ -6,6 +6,9 @@ relativeURLs = true
 canonifyURLs = false
 draft = true
 
+[params.author]
+name = "Alexander (Sasha) Sandler"
+
 [params]
 ShowShareButtons = true
 hideFooter = true
