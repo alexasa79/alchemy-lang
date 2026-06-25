@@ -4,10 +4,29 @@
     <title>Welcome to Alchemy Programming Language on Alchemy-Lang Programming Language</title>
     <link>https://alchemy-lang.org/</link>
     <description>Recent content in Welcome to Alchemy Programming Language on Alchemy-Lang Programming Language</description>
-    <generator>Hugo -- 0.154.2</generator>
+    <generator>Hugo -- 0.163.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Jan 2026 12:04:39 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 18 Feb 2026 11:23:03 -0500</lastBuildDate>
     <atom:link href="https://alchemy-lang.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why a New Language</title>
+      <link>https://alchemy-lang.org/why-new-language/</link>
+      <pubDate>Wed, 18 Feb 2026 11:23:03 -0500</pubDate>
+      <guid>https://alchemy-lang.org/why-new-language/</guid>
+      <description>&lt;p&gt;New programming languages pop up like mushrooms. Nobody wants another
+programming language unless it solves a set of profound problems other languages
+cannot solve. So why am I confident that this project will not go completely
+under the radar?&lt;/p&gt;
+&lt;p&gt;I think there are two fundamental things that are special about Alchemy that
+I have not seen combined anywhere else.&lt;/p&gt;
+&lt;h1 id=&#34;macro-language&#34;&gt;Macro language&lt;/h1&gt;
+&lt;p&gt;The first thing is the macro language. Now, many programming languages have
+their own macro language, but I think what others missed is the fact that having
+a macro language requires programmers to learn two programming languages. The
+first language is the language itself, and then there is the macro language.
+It&amp;rsquo;s just complicated. The macro language itself often turns out to be
+underpowered. There are some things that it cannot do.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Copy Elision</title>
       <link>https://alchemy-lang.org/copy-elision/</link>
@@ -25,7 +44,7 @@ l.init()
 like:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Cve 2025 14847</title>
+      <title>CVE 2025 14847</title>
       <link>https://alchemy-lang.org/cve-2025-14847/</link>
       <pubDate>Wed, 07 Jan 2026 11:48:31 -0500</pubDate>
       <guid>https://alchemy-lang.org/cve-2025-14847/</guid>
@@ -35,9 +54,9 @@ the client in response to a request. The actual bug was due to returning wrong
 length of the output.&lt;/p&gt;
 &lt;p&gt;MongoDB uses BSON (Binary JSON) to return the response. BSON is compressed.
 Preparing the output starts with preparing the response JSON, which is then
-turned into Binary JSON, which is then compressed. Somewhere along the way, the
-code decides how many bytes to return and instead of returning the length of the
-compressed buffer, it decided to return the number of bytes before the
+turned into Binary JSON. Then the BSON is compressed. Somewhere along the way,
+the code decides how many bytes to return and instead of returning the length of
+the compressed buffer, it decided to return the number of bytes before the
 compression. So if the compressed response is 100 bytes and uncompressed
 response is 500 bytes, then it would return the compressed response of 100 bytes
 and another 400 bytes, whatever is in the memory after the compressed buffer.&lt;/p&gt;</description>
@@ -68,7 +87,9 @@ there at the top of the library.&lt;/p&gt;</description>
       <description>&lt;p&gt;The structure of the web-site is as follows:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;./requirements/&#34;&gt;Requirements&lt;/a&gt; document describes the requirements for the
 project.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;./tasting/&#34;&gt;A tasting&lt;/a&gt; A series of examples of coding things in Alchemy.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./tasting/&#34;&gt;A Tasting&lt;/a&gt; A series of examples of coding things in Alchemy.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./why-new-language/&#34;&gt;Why New Language?&lt;/a&gt; A discussion on the reasons for
+implementing a new language.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;./copy-elision/&#34;&gt;Copy Elision&lt;/a&gt; discusses destination-based initialization and
 how &lt;code&gt;self&lt;/code&gt; can support copy-elision semantics.&lt;/p&gt;</description>
     </item>
