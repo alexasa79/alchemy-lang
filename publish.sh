@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-hugo -D
-rsync -a --delete --exclude .git public/ ../pages/
-cd ../pages
-git add -A && git commit -m "publish"
-git push
+set -euo pipefail
+
+gh workflow run pages.yml --repo alexasa79/alchemy-lang --ref main
